@@ -43,6 +43,14 @@ function IsPalindrome(stringa){
    
 }
 
+//TASK 2: Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+function CheckEvenOdd(sumP, evenOddUserP){
+    console.log("siamo dentro la funzione CheckEvenOdd");
+    console.log(sumP);
+    console.log(evenOddUserP);
+    
+}
+
 //L'utente inserisce una parola
 const wordA= prompt("Inserisci una parola");
 
@@ -66,12 +74,15 @@ if (evenOdd==="pari" || evenOdd==="dispari"){
     const userNum=parseInt(prompt ("Inserisci un numero da 1 a 5"));
     if (userNum>=1 && userNum <=5){
         console.log("hai inserito un numero giusto");
-        
+        console.log(userNum);
         //Generiamo un numero random (sempre da 1 a 5) per il computer (metodo js random (numeri casuali)).
         const pcNum= Math.floor((Math.random() * 5) + 1);
         console.log(pcNum);
-        
-
+        //Sommiamo i due numeri
+        const sum=userNum+pcNum;
+        console.log(sum); 
+        //Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+        const resultCheckEvenOdd= CheckEvenOdd(sum, evenOdd);
 
     }else{
         console.log("hai inserito un numero sbagliato");
