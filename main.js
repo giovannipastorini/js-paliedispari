@@ -7,6 +7,8 @@ const wordA= prompt("Inserisci una parola");
 
 //chiamo la funzione  "IsPalindrome"
 const checkPal= IsPalindrome(wordA);
+console.log(checkPal);
+
 
 //creo e dichiaro una funzione di nome "IsPalindrome" per verificare se una parola è palindroma
 function IsPalindrome(stringa){
@@ -25,26 +27,31 @@ function IsPalindrome(stringa){
         //aggiungo la sottostringa (carattere) all'array:
         stringaArray.push(ThisCharacter);
     }
-    console.log(stringaArray);
     
     //riempio l'array "stringaArrayReverse" 
-    const stringaArrayReverse= stringaArray.reverse();
+    const stringaArrayReverse= stringaArray.toReversed();
 
     console.log(stringaArrayReverse);
+    console.log(stringaArray);
 
     //verifico l'uguaglianza dei due array:
     //Se trovo sempre corrispondenza fra gli elementi degli array che si trovano nella stessa posizione, allora:
     //la parola è palindroma!
-    let IsPal= true;
+    /* let IsPal= null; */
+    
 
     for(let i=0; i< stringaArray.length; i++){
+        console.log(stringaArray[i]);
+        console.log(stringaArrayReverse[i]);
+        
         if(stringaArray[i] != stringaArrayReverse[i]){
             //LA PAROLA NON E' PALINDROMA
-            IsPal= false;
+            /* IsPal= false; */
+            return ("la parola non è palindroma");
         }
     }
-    console.log(IsPal);
-     
+    
+   return ("la parola è palindroma");
    
 }
 
