@@ -44,10 +44,18 @@ function IsPalindrome(stringa){
 }
 
 //TASK 2: Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-function CheckEvenOdd(sumP, evenOddUserP){
-    console.log("siamo dentro la funzione CheckEvenOdd");
-    console.log(sumP);
-    console.log(evenOddUserP);
+function CheckEvenOdd(somma, evenOddUser){
+    //Stabiliamo se la somma dei due numeri è pari o dispari e chi è il vincitore
+    if (somma % 2 === 0 && (evenOddUser ==="pari" || evenOddUser ==="Pari")){
+        //vincitore:
+        return("user");
+    }else if (somma % 2 !== 0 && (evenOddUser ==="dispari" || evenOddUser ==="Dispari")){
+        //vincitore:
+        return("user");
+    }else{
+        //vincitore:
+        return("PC");
+    }
     
 }
 
@@ -66,10 +74,10 @@ console.log(checkPal);
 //Dichiariamo chi ha vinto.
 
 //L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-const evenOdd= prompt("Inserisci pari o dispari");
+const userEvenOdd= prompt("Inserisci pari o dispari");
 
 //controllo se l'utente ha inserito un valore corretto
-if (evenOdd==="pari" || evenOdd==="dispari"){
+if (userEvenOdd==="pari" || userEvenOdd==="dispari"){
     //l'utente inserisce un numero da 1 a 5 
     const userNum=parseInt(prompt ("Inserisci un numero da 1 a 5"));
     if (userNum>=1 && userNum <=5){
@@ -81,8 +89,10 @@ if (evenOdd==="pari" || evenOdd==="dispari"){
         //Sommiamo i due numeri
         const sum=userNum+pcNum;
         console.log(sum); 
-        //Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-        const resultCheckEvenOdd= CheckEvenOdd(sum, evenOdd);
+        
+        const winner= CheckEvenOdd(sum, userEvenOdd);
+        console.log("il vincitore è: "+ winner);
+        
 
     }else{
         console.log("hai inserito un numero sbagliato");
